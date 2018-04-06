@@ -289,7 +289,7 @@ trait EloquentBuilderTrait
                     $relation->getTable(),
                     $relation->getQualifiedParentKeyName(),
                     '=',
-                    $relation->getQualifiedRelatedPivotKeyName(),
+                    $relation->getQualifiedForeignPivotKeyName(),
                     $type
                 );
                 $queryBuilder->join(
