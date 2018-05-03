@@ -241,8 +241,8 @@ trait EloquentBuilderTrait
             }
         }
 
-        // make joins unique so we dont get duplicate joins
         $joins = array_unique($joins);
+
         foreach(array_diff($joins, $previouslyJoined) as $join) {
             $this->joinRelatedModelIfExists($queryBuilder, $join);
         }
