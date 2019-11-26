@@ -1,6 +1,6 @@
 {
     "name": "optimus/bruno",
-    "version": "1.0.1-dev",
+    "version": "1.0.2-dev",
     "autoload": {
         "psr-4": {
             "Optimus\\Bruno\\": "src/"

@@ -90,6 +90,17 @@ abstract class LaravelController extends Controller
         return $return;
     }
 
+    private function convertBool($value) {
+        switch ($value) {
+            case 'true':
+            case '1':
+                return true;
+            case 'false':
+            default:
+                return false;
+        }
+    }
+
     /**
      * Parse filter group strings into filters
      * Filters are formatted as key:operator(value)
@@ -110,7 +121,7 @@ abstract class LaravelController extends Controller
                 if (!isset($filter['not'])) {
                     $filter['not'] = false;
                 } else {
-                    $filter['not'] = (bool) $filter['not'];
+                    $filter['not'] = $this->convertBool($filter['not']);
                 }
 
                 return $filter;
