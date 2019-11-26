@@ -109,6 +109,8 @@ abstract class LaravelController extends Controller
             $filters = array_map(function($filter){
                 if (!isset($filter['not'])) {
                     $filter['not'] = false;
+                } else {
+                    $filter['not'] = (bool) $filter['not'];
                 }
 
                 return $filter;
